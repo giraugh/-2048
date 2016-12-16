@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://gabrielecirulli.github.io/2048/ -->
+<html lang="en" manifest="cache.appcache"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>2048</title>
+
+  <link href="./2048_files/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="https://gabrielecirulli.github.io/2048/favicon.ico">
+  <link rel="apple-touch-icon" href="https://gabrielecirulli.github.io/2048/meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="https://gabrielecirulli.github.io/2048/meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="https://gabrielecirulli.github.io/2048/meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta name="apple-itunes-app" content="app-id=868076805">
+
+  <meta property="og:title" content="2048">
+  <meta property="og:site_name" content="2048">
+  <meta property="og:description" content="Join the numbers and get to the 2048 tile! Careful: this game is extremely addictive!">
+  <meta property="og:image" content="http://gabrielecirulli.github.io/2048/meta/og_image.png">
+
+  <meta name="twitter:card" content="app">
+  <meta name="twitter:site" content="@gabrielecirulli">
+  <meta name="twitter:title" content="2048">
+  <meta name="twitter:description" content="Join the numbers and get to the 2048 tile! Careful: this game is extremely addictive!">
+  <meta name="twitter:image" content="http://gabrielecirulli.github.io/2048/meta/og_image.png">
+  <meta name="twitter:url" content="http://gabrielecirulli.github.io/2048/">
+  <meta name="twitter:app:country" content="US">
+  <meta name="twitter:app:name:iphone" content="2048">
+  <meta name="twitter:app:id:iphone" content="868076805">
+  <meta name="twitter:app:url:iphone" content="https://itunes.apple.com/us/app/2048-by-gabriele-cirulli/id868076805">
+  <meta name="twitter:app:name:ipad" content="2048">
+  <meta name="twitter:app:id:ipad" content="868076805">
+  <meta name="twitter:app:url:ipad" content="https://itunes.apple.com/us/app/2048-by-gabriele-cirulli/id868076805">
+  <meta name="twitter:app:name:googleplay" content="2048">
+  <meta name="twitter:app:id:googleplay" content="com.gabrielecirulli.app2048">
+  <meta name="twitter:app:url:googleplay" content="https://play.google.com/store/apps/details?id=com.gabrielecirulli.app2048">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">!2048</h1>
+      <div class="scores-container">
+        <div class="score-container">372<div class="score-addition">+4</div></div>
+        <div class="best-container">2424</div>
+      </div>
+    </div>
+
+
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+          <div class="score-sharing"></div>
+          <div class="mailing-list">
+            <!-- MailChimp Signup Form -->
+            <form action="http://gabrielecirulli.us8.list-manage.com/subscribe/post?u=991201206817cfb4e4247ed6c&amp;id=7928ea817b" method="post" name="mc-embedded-subscribe-form" class="mailing-list-form" target="_blank">
+              <strong>Get email updates from Gabriele</strong>
+
+              <input type="email" value="" name="EMAIL" class="mailing-list-email-field" placeholder="Your email address" spellcheck="false">
+
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -9999px;">
+                <input type="text" name="b_991201206817cfb4e4247ed6c_7928ea817b" value="">
+              </div>
+
+              <input type="submit" value="Go" name="subscribe" class="mailing-list-subscribe-button">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container"><div class="tile tile-8 tile-position-1-1"><div class="tile-inner">8</div></div><div class="tile tile-2 tile-position-1-2"><div class="tile-inner">2</div></div><div class="tile tile-8 tile-position-1-3"><div class="tile-inner">8</div></div><div class="tile tile-4 tile-position-1-4"><div class="tile-inner">4</div></div><div class="tile tile-64 tile-position-2-1"><div class="tile-inner">64</div></div><div class="tile tile-8 tile-position-2-2"><div class="tile-inner">8</div></div><div class="tile tile-4 tile-position-2-3"><div class="tile-inner">4</div></div><div class="tile tile-2 tile-position-2-4"><div class="tile-inner">2</div></div><div class="tile tile-4 tile-position-3-1"><div class="tile-inner">4</div></div><div class="tile tile-2 tile-position-3-2"><div class="tile-inner">2</div></div><div class="tile tile-2 tile-position-3-2"><div class="tile-inner">2</div></div><div class="tile tile-4 tile-position-3-2 tile-merged"><div class="tile-inner">4</div></div><div class="tile tile-2 tile-position-3-3"><div class="tile-inner">2</div></div><div class="tile tile-2 tile-position-4-1"><div class="tile-inner">2</div></div><div class="tile tile-2 tile-position-4-4 tile-new"><div class="tile-inner">2</div></div></div>
+    </div>
+
+    <div class="above-game">
+      <a class="restart-button" style="display: none;">New Game</a>
+    </div>
+    <p id="explain" style="text-align: center; margin-top: 25px;">
+    !2048 by <a href="http://ewanb.me">retr0verse</a>. Original Site</a> Created by <br/><a href="http://gabrielecirulli.com/" target="_blank">Gabriele Cirulli.</a>
+    </p>
+    <br>
+  </div>
+
+  <script src="./2048_files/bind_polyfill.js.download"></script>
+  <script src="./2048_files/classlist_polyfill.js.download"></script>
+  <script src="./2048_files/animframe_polyfill.js.download"></script>
+  <script src="./2048_files/keyboard_input_manager.js.download"></script>
+  <script src="./2048_files/html_actuator.js.download"></script>
+  <script src="./2048_files/grid.js.download"></script>
+  <script src="./2048_files/tile.js.download"></script>
+  <script src="./2048_files/local_storage_manager.js.download"></script>
+  <script src="./2048_files/game_manager.js.download"></script>
+  <script src="./2048_files/application.js.download"></script>
+  <script src="ace-editor/ace.js"/></script>
+
+
+<iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./2048_files/saved_resource.html"></iframe></body>
+<script src="api.js"></script>
+<div class="editor" id="editor"></div>
+<div id="apply_div"><a onclick="SetBot();" id="apply_button">Apply Code</a></div>
+<script>
+  window.Editor = ace.edit("editor");
+  Editor.setTheme("ace/theme/kuroir");
+  Editor.getSession().setMode("ace/mode/javascript");
+  Editor.setShowPrintMargin(false);
+  Editor.renderer.setShowGutter(false);
+  Editor.setHighlightActiveLine(false);
+  Editor.setValue(`//Welcome to !2048
+//Edit the code below and press apply to influence the bot
+//Use 'r' to restart
+
+//Delay between turns (in milliseconds)
+BotDelay = 100
+
+
+//bot function (called each turn)
+bot = function() {
+  if (turn_count % 2 == 0)
+    sLeft()
+  else
+    sUp()
+}
+
+
+//List of Bot Functions
+  // - sLeft() // slide board left
+  // - sRight() // slide board right
+  // - sDown() // slide board down
+  // - sUp() // slide board up
+  // - sRandom() // slide board in a random direction
+  `, -1)
+  Editor.$blockScrolling = Infinity
+
+  //Set Default Bot
+  SetBot()
+</script>
+<style>
+  .editor {
+    position: relative !important;
+    border: 1px solid lightgray;
+    margin: auto;
+    height: 400px;
+    width: 500px;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: #faf8ef !important;
+  }
+
+  #apply_div {
+    display: block;
+    position: relative !important;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  #apply_button {
+    color: #eee4da;
+    background-color: #776e65;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 5px;
+  }
+</style>
+</html>
